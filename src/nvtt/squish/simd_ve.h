@@ -33,7 +33,7 @@
 
 namespace nvsquish {
 
-#define VEC4_CONST( X ) Vec4( ( vector float ){ X } )
+#define VEC4_CONST( X ) Vec4( (vector float){ X, X, X, X } )
 
 class Vec4
 {
