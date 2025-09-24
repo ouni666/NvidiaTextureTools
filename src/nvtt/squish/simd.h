@@ -34,12 +34,19 @@
 #	define SQUISH_ALIGN_16 __declspec(align(16))
 #endif
 
+#undef SQUISH_USE_ALTIVEC
+#define SQUISH_USE_ALTIVEC 0
+
 #if SQUISH_USE_ALTIVEC
 #include "simd_ve.h"
 #endif
 
 #if SQUISH_USE_SSE
 #include "simd_sse.h"
+#endif
+
+#if !SQUISH_USE_ALTIVEC && !SQUISH_USE_SSE
+#include "simd_std.h"
 #endif
 
 #endif // ndef SQUISH_SIMD_H
